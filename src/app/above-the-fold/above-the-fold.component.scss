@@ -1,0 +1,43 @@
+@import "./../../styles.scss";
+.atf-content {
+  position: relative;
+  padding: 0 8px;
+  height: calc(100vh - 80px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+.header {
+  > h1 {
+    margin-top: 80px;
+  }
+}
+.subHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  > span:first-child {
+    height: 1px;
+    width: 32%;
+    background-color: black;
+  }
+  > span:nth-child(2) {
+    font-size: 23px;
+    font-weight: 700;
+    color: $green;
+  }
+}
+.atf-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  width: 100%;
+  > a {
+    text-decoration: none;
+    writing-mode: vertical-lr;
+    color: $black;
+  }
+}
