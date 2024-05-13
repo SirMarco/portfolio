@@ -12,8 +12,9 @@
 }
 .wrapperProjects {
   display: flex;
+  align-items: center;
   flex-direction: column;
-  gap: 12px;
+  gap: 24px;
   padding-bottom: 64px;
   > div:nth-last-child(1) {
     width: 100%;
@@ -62,17 +63,57 @@
 }
 
 .projectImage {
-  display: flex;
-  align-items: center;
+  position: relative;
   width: 100%;
-  max-width: 600px;
-  max-height: 500px;
+  // max-width: 600px;
+  // max-height: 500px;
   > img {
     width: 100%;
-    object-fit: cover;
     height: auto;
     display: block;
+    padding-right: 14px;
+    padding-bottom: 14px;
   }
+  @media (min-width: 550px) {
+    width: 550px;
+    // min-height: 600px;
+  }
+}
+
+.projectImageBorder {
+  position: absolute;
+  top: 2%;
+  left: 2%;
+  width: 97%;
+  height: 97%;
+  border: 4px solid black;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  > img {
+    position: absolute;
+    top: 40%;
+    right: -34px;
+    width: 64px;
+    height: 64px;
+  }
+  &:hover {
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+  }
+  &:hover img {
+    rotate: 226deg;
+    transition: rotate 0.2s ease-in-out;
+  }
+  @media (min-width: 550px) {
+    width: 98%;
+    height: 98%;
+  }
+}
+
+.mirror {
+  transform: scale(-1, 1);
+  top: 2%;
+  left: -3%;
 }
 
 .wrapperProject {

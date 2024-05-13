@@ -3,6 +3,9 @@
   <div class="wrapperProjects" [ngClass]="{'reverse': index % 2 !== 0}">
     <div class="projectImage">
       <img src="{{project.img}}" alt="">
+      <div class="projectImageBorder" data-aos="fade-right" [ngClass]="{'mirror': index % 2 !== 0}">
+        <img src="assets/images/arrow_frame_down.png">
+      </div>
     </div>
     <div class="wrapperProject">
       <span class="fontSyne">{{formatProjectsLength(index + 1)}} / {{formatProjectsLength(projects.length)}}</span>
