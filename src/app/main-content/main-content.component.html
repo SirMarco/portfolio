@@ -1,5 +1,16 @@
+@if (!DropdownMenuService.menuOpen) {
 <div class="wraperHeader">
   <app-header></app-header>
 </div>
 <app-above-the-fold></app-above-the-fold>
-<app-about-me></app-about-me>
+<app-about-me id="aboutme"></app-about-me>
+<app-myskills id="myskills"></app-myskills>
+<app-portfolio id="portfolio"></app-portfolio>
+<app-contact id="contact"></app-contact>
+<app-footer></app-footer>
+}@else {
+<div class="wraperHeader">
+  <app-header></app-header>
+</div>
+<app-dropdown-menu></app-dropdown-menu>
+}

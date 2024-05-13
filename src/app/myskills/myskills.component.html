@@ -1,1 +1,14 @@
-<p>myskills works!</p>
+<section class="wrapper">
+  <h1>My skills</h1>
+  <div>
+    @for (skill of skills; track $index) {
+    <div class="wrapperSkill">
+      <img src="{{skill.img}}" alt="">
+      <p>{{skill.name}}</p>
+    </div>
+    }
+  </div>
+  <div class="arrow">
+    <img src=" assets/images/arrow_left.png" alt="">
+  </div>
+</section>

@@ -1,7 +1,7 @@
-<div class="wrapper">
-  <h1>About me</h1>
+<section class="wrapper">
+  <h1 [@blink]="blinkState ? 'on' : 'off'">About me</h1>
   <div class="about">
-    <div class="left">
+    <div class="left border-red">
       <p>I am a Front-end developer based in Munich, Germany. I enjoy helping designers and companies bring their ideas
         into real life. I am looking forward to continuing my developer career with a job in a junior web developer
         position.
@@ -11,7 +11,12 @@
       </p>
       <div class="btnTalk">Let's talk</div>
     </div>
-    <img src="assets/images/profil_aboutme.png" alt="" srcset="">
-    <img src="assets/images/arrow_left.png" alt="" srcset="">
+    <div class="aboutPicture">
+      <img src="assets/images/profil_aboutme.png" alt="">
+      <div class="aboutPictureBorder"></div>
+    </div>
   </div>
-</div>
+  <div class="arrow border-red">
+    <img src=" assets/images/arrow_left.png" alt="">
+  </div>
+</section>

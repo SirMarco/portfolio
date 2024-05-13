@@ -1,4 +1,4 @@
-<div class="atf-content border-red">
+<section class="atf-content ">
   <div class="header">
     <h1>Frontend <br>Developer</h1>
     <div class="subHeader">
@@ -6,12 +6,15 @@
       <span>Marco Engelhardt</span>
     </div>
   </div>
-  <div class="message border-red">
-    send a message
-  </div>
+  <!-- <div class="message"><a href="#contact"></a>
+    Send a message
+  </div> -->
+  <a class="message" (click)="navigate('contact')">Send a message</a>
   <div class="atf-footer">
     <a href="mailto:info@marco.ch">info&#64;marco.ch</a>
-
-    <div>Scroll <br>Down</div>
+    <div class="scroll-container">
+      <img class="arrow" src="assets/images/arrow_down.png" alt="" srcset="">
+      <div>Scroll <br>Down</div>
+    </div>
   </div>
-</div>
+</section>

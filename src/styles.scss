@@ -3,6 +3,7 @@ $black: #000;
 $grey: #fffcf3;
 $cream: #fffcf3;
 $green: #00bc8f;
+$greyButton: #bbbbbb;
 
 /* syne-regular - latin */
 @font-face {
@@ -155,6 +156,11 @@ body {
 
 h1 {
   font-family: "Syne";
-  font-size: 36px;
+  font-size: 32px;
   font-weight: 800;
+}
+
+#portfolio:target {
+  padding-top: 80px; /* Höhe deines Headers */
+  margin-top: -80px; /* Negativer Wert derselben Höhe */
 }

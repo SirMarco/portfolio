@@ -1,0 +1,142 @@
+@import "./../../../styles.scss";
+.wrapper {
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  padding: 8px;
+  > img {
+    width: 200px;
+  }
+}
+.wrapperProjects {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-bottom: 64px;
+  > div:nth-last-child(1) {
+    width: 100%;
+    max-width: 500px;
+    max-height: 500px;
+    > img {
+      width: 100%;
+      height: auto;
+      display: block;
+      padding-right: 14px;
+      padding-bottom: 14px;
+    }
+  }
+  > span {
+    text-align: end;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  > img {
+    width: 100%;
+    max-width: 550px;
+  }
+  h3 {
+    font-size: 48px;
+    font-weight: 800;
+    // color: $green;
+  }
+  > div h2 {
+    font-size: 28px;
+    color: $green;
+  }
+  @media (min-width: 850px) {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  @media (max-width: 850px) {
+    align-items: center;
+  }
+}
+
+.reverse {
+  flex-direction: row-reverse;
+  @media (max-width: 850px) {
+    flex-direction: column;
+  }
+}
+
+.projectImage {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  max-height: 500px;
+  > img {
+    width: 100%;
+    object-fit: cover;
+    height: auto;
+    display: block;
+  }
+}
+
+.wrapperProject {
+  // display: flex;
+  // flex-direction: column;
+  // gap: 16px;
+  > span {
+    display: block;
+    text-align: end;
+    font-size: 48px;
+    font-weight: 700;
+  }
+  > div:nth-last-child(1) {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+.wrapperButton {
+  display: flex;
+
+  gap: 16px;
+}
+
+.button {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // min-width: 213px;
+  // height: 68px;
+  padding: 16px 40px;
+  background-color: transparent;
+  border-style: unset;
+  border: 4px solid $black;
+  font-family: "Overpass", sans-serif;
+  font-size: 23px;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    padding: 16px 48px;
+    font-weight: 700;
+  }
+  @media (max-width: 420px) {
+    padding: 14px 18px;
+    &:hover {
+      padding: 16px 20px;
+      font-weight: 700;
+    }
+  }
+}
+
+.arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 32px;
+  @media (min-width: 850px) {
+    justify-content: end;
+    padding-right: 140px;
+  }
+  > img {
+    width: 100%;
+    max-width: 200px;
+  }
+}

@@ -1,4 +1,9 @@
-<header class="border-green">
-  <span>Logo</span>
-  <span>Menü</span>
+<header>
+  <img src="./../../assets/images/logoInitialBlack.png" alt="">
+  <div id="navIcon" [ngClass]="{'open': DropdownMenuService.menuOpen}" (click)="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
 </header>

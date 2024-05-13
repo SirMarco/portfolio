@@ -1,0 +1,29 @@
+<section class="wrapper border-red">
+  <div class="container">
+    <div class="linkContainer">
+      <a (click)="navigate('aboutme')">
+        <h1>About me</h1>
+      </a>
+      <div></div>
+    </div>
+    <div class="linkContainer">
+      <a (click)="navigate('myskills')">
+        <h1>My Skills</h1>
+      </a>
+      <div></div>
+    </div>
+    <div class="linkContainer">
+      <a (click)="navigate('portfolio')">
+        <h1>Portfolio</h1>
+      </a>
+      <div></div>
+    </div>
+  </div>
+  <div class="bottom">
+    <div class="responsive-diagonal"></div>
+    <h1 (click)="navigate('contact')">Say hi!</h1>
+    <div class="footer-wrapper">
+      <app-footer></app-footer>
+    </div>
+  </div>
+</section>
