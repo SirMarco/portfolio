@@ -1,0 +1,23 @@
+{
+  "About me": "About me",
+  "About Me - Description": "I am a Front-end developer based in Munich, Germany. I enjoy helping designers and companies bring their ideas into real life.\nI am looking forward to continuing my developer career with a job in a junior web developer position. \n \n If you think I’d be a good match for your projects, contact me! ",
+  "About Me - Description2": "If you think I’d be a good match for your projects, contact me!",
+  "Portfolio - Header": "Feel free to try out my latest development projects and look into their code.",
+  "project": {
+    "join": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
+    "el pololoco": "A simple Jump-and-Run game based on an object-oriented approach. Help pepe to find coins and poison bottles to fight against the killer chicken.",
+    "pokédex": "Based on the PokéAPI a simple library that provides and catalogues pokemon information."
+  },
+  "say hi": "Say hi!",
+  "contact": {
+    "description1": "Want to discuss a new project?",
+    "description2": "Say hello! Let's discuss your ideas and make it happen.",
+    "name": "Your name",
+    "namerequired": "Your name is required - min 3 signs",
+    "email": "Your email",
+    "emailrequired": "Your email is required",
+    "message": "Your message",
+    "messagerequired": "Your message is empty - min 5 signs",
+    "readpolicy": "I've read the privacy policy and agree to the processing of my data as outlined."
+  }
+}

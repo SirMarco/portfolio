@@ -1,53 +1,57 @@
 <section class="wrapper">
   <div class="responsive-diagonal"></div>
-  <h1>Say hi!</h1>
-  <h2>Want to discuss a new project?</h2>
-  <span>Say hello! Let's discuss your ideas and make it happen.</span>
+  <h1>{{'say hi' | translate}}</h1>
+  <!-- <h2>Want to discuss a new project?</h2> -->
+  <h2>{{'contact.description1' | translate}}</h2>
+  <span>{{'contact.description2' | translate}}</span>
   <form class="wrapperInputGroup" [formGroup]="contactForm" (ngSubmit)="sendEmail()">
     <div class="input-group">
       <input formControlName="name" type="text" id="name">
       <label for="name"
-        [class.inputValid]="contactForm.controls['name'].value.length > 0 && contactForm.controls['name'].touched">Your
-        name</label>
+        [class.inputValid]="contactForm.controls['name'].value.length > 0 && contactForm.controls['name'].touched">{{'contact.name'
+        | translate}}</label>
       <img *ngIf="contactForm.controls['name'].invalid && contactForm.controls['name'].touched"
         src="assets/images/contactError.png" alt="">
       <img *ngIf="contactForm.controls['name'].valid && contactForm.controls['name'].touched"
         src="assets/images/contactDone.png" alt="">
     </div>
-    <p *ngIf="contactForm.controls['name'].invalid && contactForm.controls['name'].touched" class="noticeInput">Your
-      name is required - min 3 signs</p>
+    <p *ngIf="contactForm.controls['name'].invalid && contactForm.controls['name'].touched" class="noticeInput">
+      {{'contact.namerequired'
+      | translate}}</p>
 
     <div class="input-group">
       <input formControlName="email" type="email" id="email">
       <label for="name"
-        [class.inputValid]="contactForm.controls['email'].value.length > 0 && contactForm.controls['email'].touched">Your
-        email</label>
+        [class.inputValid]="contactForm.controls['email'].value.length > 0 && contactForm.controls['email'].touched">{{'contact.email'
+        | translate}}</label>
       <img *ngIf="contactForm.controls['email'].invalid && contactForm.controls['email'].touched"
         src="assets/images/contactError.png" alt="">
       <img *ngIf="contactForm.controls['email'].valid && contactForm.controls['email'].touched"
         src="assets/images/contactDone.png" alt="">
     </div>
-    <p *ngIf="contactForm.controls['email'].invalid && contactForm.controls['email'].touched" class="noticeInput">Your
-      email is required</p>
+    <p *ngIf="contactForm.controls['email'].invalid && contactForm.controls['email'].touched" class="noticeInput">
+      {{'contact.emailrequired'
+      | translate}}</p>
 
     <div class="input-group">
       <textarea formControlName="message"></textarea>
       <label for="name"
-        [class.inputValid]="contactForm.controls['message'].value.length > 0 && contactForm.controls['message'].touched">Your
-        message</label>
+        [class.inputValid]="contactForm.controls['message'].value.length > 0 && contactForm.controls['message'].touched">{{'contact.message'
+        | translate}}</label>
       <img *ngIf="contactForm.controls['message'].invalid && contactForm.controls['message'].touched"
         src="assets/images/contactError.png" alt="">
       <img *ngIf="contactForm.controls['message'].valid && contactForm.controls['message'].touched"
         src="assets/images/contactDone.png" alt="">
     </div>
     <p *ngIf="contactForm.controls['message'].invalid && contactForm.controls['message'].touched" class="noticeInput">
-      Your message is empty - min 5 signs</p>
+      {{'contact.messagerequired'
+      | translate}}</p>
 
     <label class="wrapperCheckbox">
       <input formControlName="checkbox" type="checkbox" id="checkbox" hidden>
       <span class="checkmark"></span>
-      <span style="color: white; padding-left: 5px;">I've read the privacy policy and agree to the processing of my data
-        as outlined.</span>
+      <span style="color: white; padding-left: 5px;">{{'contact.readpolicy'
+        | translate}}</span>
     </label>
 
     <div class="wrapperSubmit">

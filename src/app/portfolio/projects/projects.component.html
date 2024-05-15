@@ -13,7 +13,7 @@
       <div>
         <h3 class="fontSyne">{{project.name}}</h3>
         <h2>{{project.subheader}}</h2>
-        <p>{{project.text}}</p>
+        <p>{{ 'project.' + project.name.toLowerCase() | translate }}</p>
         <div class="wrapperButton">
           <button class="button">Github</button>
           <button class="button">Live Test</button>

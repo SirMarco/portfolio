@@ -1,14 +1,12 @@
 <section class="wrapper">
-  <!-- <h1 [@blink]="blinkState ? 'on' : 'off'">About me</h1> -->
-  <h1>About me</h1>
+  <!-- <h1>About me</h1> -->
+  <h1>{{ 'About me' | translate}}</h1>
   <div class="about">
     <div class="left">
-      <p>I am a Front-end developer based in Munich, Germany. I enjoy helping designers and companies bring their ideas
-        into real life. I am looking forward to continuing my developer career with a job in a junior web developer
-        position.
+      <p>{{'About Me - Description' | translate}}
         <br>
         <br>
-        If you think I’d be a good match for your projects, contact me!
+        {{'About Me - Description2' | translate}}
       </p>
       <div class="btnTalk">Let's talk</div>
     </div>
