@@ -41,6 +41,9 @@
     font-size: 48px;
     font-weight: 800;
     // color: $green;
+    @media (max-width: 500px) {
+      font-size: 36px;
+    }
   }
   > div h2 {
     font-size: 28px;
@@ -71,8 +74,8 @@
     width: 100%;
     height: auto;
     display: block;
-    padding-right: 14px;
-    padding-bottom: 14px;
+    padding-right: 17px;
+    padding-bottom: 17px;
   }
   @media (min-width: 550px) {
     width: 550px;
@@ -80,21 +83,30 @@
   }
 }
 
+[data-aos="gray-animation"] {
+  filter: grayscale(1);
+  // transition-property: filter;
+
+  &.aos-animate {
+    filter: grayscale(0);
+  }
+}
+
 .projectImageBorder {
   position: absolute;
-  top: 2%;
+  top: 5%;
   left: 2%;
-  width: 97%;
-  height: 97%;
+  width: 93%;
+  height: 93%;
   border: 4px solid black;
   opacity: 0;
   transition: opacity 0.2s ease-in-out;
   > img {
     position: absolute;
     top: 40%;
-    right: -34px;
-    width: 64px;
-    height: 64px;
+    right: -25px;
+    // width: 64px;
+    // height: 64px;
   }
   &:hover {
     opacity: 1;
@@ -111,9 +123,11 @@
 }
 
 .mirror {
-  transform: scale(-1, 1);
-  top: 2%;
-  left: -3%;
+  @media (min-width: 850px) {
+    transform: scale(-1, 1);
+    top: 2%;
+    left: -3%;
+  }
 }
 
 .wrapperProject {
@@ -125,6 +139,9 @@
     text-align: end;
     font-size: 48px;
     font-weight: 700;
+    @media (max-width: 550px) {
+      font-size: 36px;
+    }
   }
   > div:nth-last-child(1) {
     display: flex;

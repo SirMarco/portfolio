@@ -16,10 +16,10 @@ import {
   animations: [
     trigger('blink', [
       transition('* <=> *', [
-        animate('200ms ease-in', style({ color: '#00bc8f' })),
-        animate('4s', style({ color: '#00bc8f' })),
+        animate('200ms ease-in', style({ color: '#FF9900' })),
+        animate('2s', style({ color: '#FF9900' })),
         animate('200ms ease-out', style({ color: 'black' })),
-        animate('4s', style({ color: 'black' })),
+        animate('2s', style({ color: 'black' })),
       ]),
     ]),
   ],
@@ -31,7 +31,7 @@ export class AboutMeComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.intervalId = setInterval(() => {
       this.blinkState = !this.blinkState;
-    }, 4600);
+    }, 2600);
   }
   ngOnDestroy(): void {
     clearInterval(this.intervalId);

@@ -1,0 +1,46 @@
+<section class="wrapper border-">
+  <div class="responsive-diagonal"></div>
+  <h1>Say hi!</h1>
+  <h2>Want to discuss a new project?</h2>
+  <span>Say hello! let's discuss your ideas an male it happen</span>
+  <form class="wrapperInputGroup" (ngSubmit)="sendEmail()" action="https://formspree.io/f/moqgbpowDEMO" method="POST">
+    <!-- <form class="wrapperInputGroup" (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm"> -->
+    <div class="input-group">
+      <input #name="ngModel" [(ngModel)]="contactData.name" name="name" type="text" id="name" minlength="3" required>
+      <label for="name">Your name</label>
+      <img *ngIf="!name.valid && name.touched" src="assets/images/contactError.png" alt="">
+      <img *ngIf="name.valid && name.touched" src="assets/images/contactDone.png" alt="">
+    </div>
+    <p *ngIf="!name.valid && name.touched" class="noticeInput">Your name is required - min 3 signs</p>
+
+
+    <div class="input-group">
+      <input #email="ngModel" [(ngModel)]="contactData.email" name="email" type="email" id="email" required
+        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+      <label for="email">Your email</label>
+      <img *ngIf="!email.valid && email.touched" src="assets/images/contactError.png" alt="">
+      <img *ngIf="email.valid && email.touched" src="assets/images/contactDone.png" alt="">
+    </div>
+    <p *ngIf="!email.valid && email.touched" class="noticeInput">Your email is required</p>
+
+    <div class="input-group">
+      <textarea #message="ngModel" [(ngModel)]="contactData.message" name="message" required></textarea>
+      <label for="message">Your message</label>
+      <img *ngIf="!message.valid && message.touched" src="assets/images/contactError.png" alt="">
+      <img *ngIf="message.valid && message.touched" src="assets/images/contactDone.png" alt="">
+    </div>
+    <p *ngIf="!message.valid && message.touched" class="noticeInput">Your message is emtpy - min 5 signs</p>
+    <label class="wrapperCheckbox">
+      <input type="checkbox" name="checkbox" id="checkbox" [(ngModel)]="checkbox" (click)="privacyChecked()" hidden
+        required>
+      <span class="checkmark"></span>
+      <span style="color: white; padding-left: 5px;">I've read the privacy policy and agree to the processing of my data
+        as outlined.</span>
+    </label>
+
+    <!-- <p *ngIf="!checkbox" class="noticeInput">Your message is emtpy - min 5 signs</p> -->
+    <div class="wrapperSubmit">
+      <button [ngClass]="{'submitDisable': !checkbox}" class="submit" type="submit"> Send message</button>
+    </div>
+  </form>
+</section>

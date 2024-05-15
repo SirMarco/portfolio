@@ -2,7 +2,8 @@ $white: #ffff;
 $black: #000;
 $grey: #fffcf3;
 $cream: #fffcf3;
-$green: #00bc8f;
+// $green: #00bc8f;
+$green: #ff9900;
 $greyButton: #bbbbbb;
 
 /* syne-regular - latin */
@@ -131,7 +132,11 @@ $greyButton: #bbbbbb;
   margin: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
-  // overflow-y: hidden;
+  // overflow-x: hidden;
+}
+
+html {
+  // overflow-x: hidden;
 }
 
 body {
@@ -142,6 +147,11 @@ body {
   position: relative;
   background-color: $cream;
   font-family: "Overpass";
+  overflow-x: hidden;
+}
+
+body > x {
+  overflow-x: hidden;
 }
 
 .border-red {
@@ -161,6 +171,21 @@ h1 {
 }
 
 #portfolio:target {
-  padding-top: 80px; /* Höhe deines Headers */
-  margin-top: -80px; /* Negativer Wert derselben Höhe */
+  padding-top: 20px;
+  margin-top: -20px;
+}
+
+@keyframes blink {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+    color: $black;
+  }
+
+  25%,
+  75% {
+    opacity: 1;
+    color: $green;
+  }
 }

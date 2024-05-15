@@ -1,45 +1,58 @@
-<section class="wrapper border-">
+<section class="wrapper">
   <div class="responsive-diagonal"></div>
   <h1>Say hi!</h1>
   <h2>Want to discuss a new project?</h2>
-  <span>Say hello! let's discuss your ideas an male it happen</span>
-  <form class="wrapperInputGroup" (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+  <span>Say hello! Let's discuss your ideas and make it happen.</span>
+  <form class="wrapperInputGroup" [formGroup]="contactForm" (ngSubmit)="sendEmail()">
     <div class="input-group">
-      <input #name="ngModel" [(ngModel)]="contactData.name" name="name" type="text" id="name" minlength="3" required>
-      <label for="name">Your name</label>
-      <img *ngIf="!name.valid && name.touched" src="assets/images/contactError.png" alt="">
-      <img *ngIf="name.valid && name.touched" src="assets/images/contactDone.png" alt="">
+      <input formControlName="name" type="text" id="name">
+      <label for="name"
+        [class.inputValid]="contactForm.controls['name'].value.length > 0 && contactForm.controls['name'].touched">Your
+        name</label>
+      <img *ngIf="contactForm.controls['name'].invalid && contactForm.controls['name'].touched"
+        src="assets/images/contactError.png" alt="">
+      <img *ngIf="contactForm.controls['name'].valid && contactForm.controls['name'].touched"
+        src="assets/images/contactDone.png" alt="">
     </div>
-    <p *ngIf="!name.valid && name.touched" class="noticeInput">Your name is required - min 3 signs</p>
-
-
-    <div class="input-group">
-      <input #email="ngModel" [(ngModel)]="contactData.email" name="email" type="email" id="email" required
-        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
-      <label for="email">Your email</label>
-      <img *ngIf="!email.valid && email.touched" src="assets/images/contactError.png" alt="">
-      <img *ngIf="email.valid && email.touched" src="assets/images/contactDone.png" alt="">
-    </div>
-    <p *ngIf="!email.valid && email.touched" class="noticeInput">Your email is required</p>
+    <p *ngIf="contactForm.controls['name'].invalid && contactForm.controls['name'].touched" class="noticeInput">Your
+      name is required - min 3 signs</p>
 
     <div class="input-group">
-      <textarea #message="ngModel" [(ngModel)]="contactData.message" name="message" required></textarea>
-      <label for="message">Your message</label>
-      <img *ngIf="!message.valid && message.touched" src="assets/images/contactError.png" alt="">
-      <img *ngIf="message.valid && message.touched" src="assets/images/contactDone.png" alt="">
+      <input formControlName="email" type="email" id="email">
+      <label for="name"
+        [class.inputValid]="contactForm.controls['email'].value.length > 0 && contactForm.controls['email'].touched">Your
+        email</label>
+      <img *ngIf="contactForm.controls['email'].invalid && contactForm.controls['email'].touched"
+        src="assets/images/contactError.png" alt="">
+      <img *ngIf="contactForm.controls['email'].valid && contactForm.controls['email'].touched"
+        src="assets/images/contactDone.png" alt="">
     </div>
-    <p *ngIf="!message.valid && message.touched" class="noticeInput">Your message is emtpy - min 5 signs</p>
+    <p *ngIf="contactForm.controls['email'].invalid && contactForm.controls['email'].touched" class="noticeInput">Your
+      email is required</p>
+
+    <div class="input-group">
+      <textarea formControlName="message"></textarea>
+      <label for="name"
+        [class.inputValid]="contactForm.controls['message'].value.length > 0 && contactForm.controls['message'].touched">Your
+        message</label>
+      <img *ngIf="contactForm.controls['message'].invalid && contactForm.controls['message'].touched"
+        src="assets/images/contactError.png" alt="">
+      <img *ngIf="contactForm.controls['message'].valid && contactForm.controls['message'].touched"
+        src="assets/images/contactDone.png" alt="">
+    </div>
+    <p *ngIf="contactForm.controls['message'].invalid && contactForm.controls['message'].touched" class="noticeInput">
+      Your message is empty - min 5 signs</p>
+
     <label class="wrapperCheckbox">
-      <input type="checkbox" name="checkbox" id="checkbox" [(ngModel)]="checkbox" (click)="privacyChecked()" hidden
-        required>
+      <input formControlName="checkbox" type="checkbox" id="checkbox" hidden>
       <span class="checkmark"></span>
       <span style="color: white; padding-left: 5px;">I've read the privacy policy and agree to the processing of my data
         as outlined.</span>
     </label>
 
-    <!-- <p *ngIf="!checkbox" class="noticeInput">Your message is emtpy - min 5 signs</p> -->
     <div class="wrapperSubmit">
-      <button [ngClass]="{'submitDisable': !checkbox}" class="submit" type="submit"> Send message</button>
+      <button [ngClass]="{'submitDisable': !contactForm.valid}" class="submit" type="submit"
+        [disabled]="!contactForm.valid">Send message</button>
     </div>
   </form>
 </section>

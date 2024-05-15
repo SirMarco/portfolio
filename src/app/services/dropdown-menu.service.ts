@@ -15,6 +15,8 @@ export class DropdownMenuService {
   }
 
   closeMenu(): void {
+    console.log('Close Menu');
+
     this._menuOpen = false;
   }
 }

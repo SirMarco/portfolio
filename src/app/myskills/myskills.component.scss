@@ -1,11 +1,17 @@
 @import "./../../styles.scss";
+section {
+  display: flex;
+  align-items: flex-start;
+}
+
 .wrapper {
+  position: relative;
+  top: -30px;
   display: flex;
   justify-content: start;
   flex-direction: column;
-  // height: 100vh;
   width: 100%;
-  padding: 8px;
+  padding: 16px;
   > h1 {
     position: relative;
     top: 30px;
@@ -36,11 +42,45 @@
   gap: 8px;
   flex: 0 0 30.3333%;
   box-sizing: border-box;
+  &:hover {
+    color: $green;
+  }
   > img {
     height: 75px;
   }
   > p {
     font-weight: 700;
+    text-align: center;
+  }
+}
+
+.animation {
+  animation: skillAnimation 1.3s linear 0s 1 normal forwards;
+}
+
+@keyframes skillAnimation {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70% {
+    transform: translateX(-10px);
+  }
+  20%,
+  40%,
+  60% {
+    transform: translateX(10px);
+  }
+
+  80% {
+    transform: translateX(8px);
+  }
+
+  90% {
+    transform: translateX(-8px);
   }
 }
 
@@ -68,8 +108,8 @@ section {
   > img {
     width: 100%;
     max-width: 200px;
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
+    // -webkit-transform: scaleX(-1);
+    // transform: scaleX(-1);
   }
 }
 

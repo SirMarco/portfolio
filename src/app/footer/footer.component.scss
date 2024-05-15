@@ -9,7 +9,8 @@ footer {
   gap: 20px;
   // height: 100%;
   width: 100%;
-  padding: 8px;
+  // padding: 8px;
+  padding: 16px;
   // flex-grow: 1;
 }
 .container {
@@ -17,12 +18,24 @@ footer {
   flex-direction: column;
   gap: 16px;
   width: 100%;
+  @media (min-width: 850px) {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 .left {
   display: flex;
   justify-content: center;
   gap: 16px;
+  > img {
+    width: 40px;
+    height: 40px;
+  }
+  @media (min-width: 850px) {
+    gap: 42px;
+  }
 }
 
 .right {
@@ -39,10 +52,6 @@ footer {
     color: $white;
     font-size: 23px;
   }
-  > a:nth-of-type(2) {
-    text-decoration: none;
-    color: $white;
-  }
 }
 
 .wrapperSocial {
@@ -50,4 +59,18 @@ footer {
   justify-content: center;
   align-items: center;
   gap: 32px;
+}
+
+.legalNotice {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  @media (min-width: 850px) {
+    justify-content: end;
+  }
+  > a {
+    text-decoration: none;
+    color: $white;
+    text-align: right;
+  }
 }

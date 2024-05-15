@@ -1,7 +1,8 @@
 @import "./../../styles.scss";
 .atf-content {
   position: relative;
-  padding: 0 8px;
+  // padding: 0 8px;
+  padding: 0 16px;
   height: calc(100vh - 80px);
   display: flex;
   justify-content: space-between;

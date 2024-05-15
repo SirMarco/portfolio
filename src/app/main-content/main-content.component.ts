@@ -9,6 +9,7 @@ import { FooterComponent } from '../footer/footer.component';
 import { DropdownMenuComponent } from '../dropdown-menu/dropdown-menu.component';
 import { DropdownMenuService } from './../services/dropdown-menu.service';
 import { CommonModule } from '@angular/common';
+import AOS from 'aos';
 
 @Component({
   selector: 'app-main-content',
@@ -29,4 +30,10 @@ import { CommonModule } from '@angular/common';
 })
 export class MainContentComponent {
   constructor(public DropdownMenuService: DropdownMenuService) {}
+  ngOnInit() {
+    AOS.init({
+      // startEvent: 'scroll',
+    });
+    // AOS.refresh();
+  }
 }

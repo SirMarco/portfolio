@@ -1,14 +1,15 @@
 <section class="wrapper">
   <h1>My skills</h1>
   <div>
-    @for (skill of skills; track $index) {
+    @for (skill of skills; track skill; let i = $index) {
     <div class="wrapperSkill">
-      <img src="{{skill.img}}" alt="">
+      <img src="{{skill.img}}" alt="" [ngClass]="{'animation': skills[i].animate}" (mouseenter)="onMouseEnter(i)"
+        (mouseleave)="onMouseLeave(i)">
       <p>{{skill.name}}</p>
     </div>
     }
   </div>
   <div class="arrow">
-    <img src=" assets/images/arrow_left.png" alt="">
+    <img src=" assets/images/arrow_right.png" alt="" data-aos="fade-down-right" data-aos-duration="700">
   </div>
 </section>

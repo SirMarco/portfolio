@@ -1,59 +1,53 @@
-import { CommonModule } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit, inject } from '@angular/core';
-import { FormsModule, NgForm } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './contact.component.html',
-  styleUrl: './contact.component.scss',
+  styleUrls: ['./contact.component.scss'],
 })
 export class ContactComponent implements OnInit {
-  http = inject(HttpClient);
-  mailTest = true;
-  checkbox = false;
+  contactForm: FormGroup;
 
-  contactData = {
-    name: '',
-    email: '',
-    message: '',
-  };
+  constructor(private fb: FormBuilder, private http: HttpClient) {
+    this.contactForm = this.fb.group({
+      name: ['', [Validators.required, Validators.minLength(3)]],
+      email: ['', [Validators.required, Validators.email]],
+      message: ['', [Validators.required, Validators.minLength(5)]],
+      checkbox: [false, Validators.requiredTrue],
+    });
+  }
 
-  post = {
-    endPoint: 'https://deineDomain.de/sendMail.php',
-    body: (payload: any) => JSON.stringify(payload),
-    options: {
-      headers: {
-        'Content-Type': 'text/plain',
-        responseType: 'text',
-      },
-    },
-  };
-  constructor() {}
   ngOnInit(): void {}
 
-  onSubmit(ngForm: NgForm) {
-    if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
+  sendEmail() {
+    const formAction = 'https://formspree.io/f/moqgbpow'; // Replace 'moqgbpowDEMO' with your actual Formspree endpoint
+    if (this.contactForm.valid) {
       this.http
-        .post(this.post.endPoint, this.post.body(this.contactData))
+        .post(formAction, this.contactForm.value, {
+          headers: { Accept: 'application/json' },
+        })
         .subscribe({
-          next: (response) => {
-            ngForm.resetForm();
-          },
-          error: (error) => {
-            console.error(error);
-          },
-          complete: () => console.info('send post complete'),
+          next: () => alert('Thanks for your submission!'),
+          error: (error) =>
+            alert('Oops! There was a problem submitting your form'),
         });
-    } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
-      console.log('test');
-
-      ngForm.resetForm();
+    } else {
+      alert('Please fill all required fields correctly.');
     }
   }
+
   privacyChecked() {
-    console.log('Checkbox ist jetzt:', this.checkbox);
+    this.contactForm.patchValue({ checkbox: !this.contactForm.value.checkbox });
+    console.log('Checkbox ist jetzt:', this.contactForm.value.checkbox);
   }
 }

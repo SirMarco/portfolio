@@ -1,13 +1,14 @@
-<section class="wrapper border-green">
+<section class="wrapper">
   @for (project of projects; track project.name; let index = $index; ) {
   <div class="wrapperProjects" [ngClass]="{'reverse': index % 2 !== 0}">
-    <div class="projectImage">
+    <div class="projectImage" data-aos="gray-animation" data-aos-duration="1500" data-aos-offset="300">
       <img src="{{project.img}}" alt="">
-      <div class="projectImageBorder" data-aos="fade-right" [ngClass]="{'mirror': index % 2 !== 0}">
+      <div class="projectImageBorder" [ngClass]="{'mirror': index % 2 !== 0}">
         <img src="assets/images/arrow_frame_down.png">
       </div>
     </div>
-    <div class="wrapperProject">
+    <div class="wrapperProject" [attr.data-aos]="index % 2 === 0 ? 'fade-left' : 'fade-right'">
+      <!-- <div class="wrapperProject"> -->
       <span class="fontSyne">{{formatProjectsLength(index + 1)}} / {{formatProjectsLength(projects.length)}}</span>
       <div>
         <h3 class="fontSyne">{{project.name}}</h3>
@@ -21,8 +22,8 @@
     </div>
   </div>
   }
-  <div class="arrow">
-    <img src=" assets/images/arrow_left.png" alt="">
+  <div class="arrow" data-aos="fade-down-left" data-aos-duration="700">
+    <img src=" assets/images/arrow_left.png">
   </div>
 
 </section>
