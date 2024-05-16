@@ -2,8 +2,8 @@ $white: #ffff;
 $black: #000;
 $grey: #fffcf3;
 $cream: #fffcf3;
-// $green: #00bc8f;
-$green: #ff9900;
+// $orange: #00bc8f;
+$orange: #ff9900;
 $greyButton: #bbbbbb;
 
 /* syne-regular - latin */
@@ -186,6 +186,16 @@ h1 {
   25%,
   75% {
     opacity: 1;
-    color: $green;
+    color: $orange;
   }
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  margin: 0 auto;
 }

@@ -9,13 +9,14 @@ import {
 } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
 }
 
 export const provideTranslation = () => ({
-  defaultLanguage: 'en',
+  defaultLanguage: 'de',
   loader: {
     provide: TranslateLoader,
     useFactory: HttpLoaderFactory,
@@ -31,5 +32,6 @@ export const appConfig: ApplicationConfig = {
       HttpClientModule,
       TranslateModule.forRoot(provideTranslation()),
     ]),
+    provideAnimationsAsync('noop'),
   ],
 };

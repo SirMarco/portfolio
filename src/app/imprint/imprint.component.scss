@@ -1,0 +1,33 @@
+@import "./../../styles.scss";
+.wraperHeader {
+  display: block;
+  height: 80px;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  min-height: calc(100vh - 220px);
+}
+.wrapper {
+  padding: 0 16px;
+  height: auto;
+  display: flex;
+  flex: 1;
+  height: auto;
+  align-items: start;
+  flex-direction: column;
+  background-color: $cream;
+  > h1 {
+    padding: 32px 0;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $black;
+  &:hover {
+    color: $orange;
+  }
+}

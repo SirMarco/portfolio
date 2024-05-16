@@ -1,1 +1,33 @@
-<p>imprint works!</p>
+<div class="wraperHeader">
+  <app-header></app-header>
+</div>
+<section>
+  <div class="wrapper">
+    <h1>{{"imprint" | translate}}</h1>
+    <div>
+      <p>{{"legalNotice.information" | translate}}</p>
+      <p>Marco Engelhardt <br>
+        Tschoupisstrasse 1b<br>
+        CH-5644 Auw <br>
+      </p>
+      <br>
+      <p> <strong>{{"legalNotice.represented" | translate}}: </strong><br>
+        Marco Engelhardt<br>
+      </p>
+      <p><strong>{{"legalNotice.contact" | translate}}:</strong> <br>
+        {{"legalNotice.phone" | translate}}: 076-3906186<br>
+        {{"legalNotice.email" | translate}}: <a href='mailto:info@marco.ch'>info&#64;marco.ch</a></p>
+      <br>
+      <p><strong>{{"legalNotice.disclaimer" | translate}}: </strong><br><br><strong>{{"legalNotice.contentHeadline" |
+          translate}}</strong><br><br>
+        {{"legalNotice.content" | translate}}<br><br><strong>{{"legalNotice.linksHeadline" |
+          translate}}</strong><br><br>
+        {{"legalNotice.links" | translate}}<br><br><strong>{{"legalNotice.privacyHeadline" |
+          translate}}</strong><br><br>
+        {{"legalNotice.privacy" | translate}}<br>
+      </p><br>
+      {{"legalNotice.imprint" | translate}}<a href="https://www.impressum-generator.de">Impressum Generator</a>
+    </div>
+  </div>
+</section>
+<app-footer></app-footer>

@@ -2,31 +2,19 @@
   <div class="container">
     <div class="linkContainer" data-aos="fade-right" data-aos-delay="50">
       <a (click)="navigate('aboutme')">
-        <h1>About me</h1>
+        <h1>{{'aboutMenu' | translate}}</h1>
       </a>
       <div></div>
     </div>
     <div class="linkContainer" data-aos="fade-left" data-aos-delay="100">
       <a (click)="navigate('myskills')">
-        <h1>My Skills</h1>
+        <h1>{{'skilltMenu' | translate}}</h1>
       </a>
       <div></div>
     </div>
     <div class="linkContainer" data-aos="fade-right" data-aos-delay="150">
       <a (click)="navigate('portfolio')">
         <h1>Portfolio</h1>
-      </a>
-      <div></div>
-    </div>
-    <div class="linkContainer" data-aos="fade-right" data-aos-delay="150">
-      <a (click)="switchLanguage('de')">
-        <h1>DE</h1>
-      </a>
-      <div></div>
-    </div>
-    <div class="linkContainer" data-aos="fade-right" data-aos-delay="150">
-      <a (click)="switchLanguage('en')">
-        <h1>EN</h1>
       </a>
       <div></div>
     </div>
