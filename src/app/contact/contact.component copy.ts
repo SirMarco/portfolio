@@ -10,6 +10,7 @@ import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { DialogService } from '../services/dialog.service';
+import { FooterComponent } from '../footer/footer.component';
 import { LanguageService } from '../services/language.service';
 
 @Component({
@@ -26,8 +27,6 @@ import { LanguageService } from '../services/language.service';
 })
 export class ContactComponent implements OnInit {
   contactForm: FormGroup;
-  messages: any;
-
   constructor(
     private fb: FormBuilder,
     private http: HttpClient,
@@ -41,22 +40,6 @@ export class ContactComponent implements OnInit {
       message: ['', [Validators.required, Validators.minLength(5)]],
       checkbox: [false, Validators.requiredTrue],
     });
-
-    let language = this.getCurrentLanguage();
-    this.messages = {
-      success:
-        language === 'de'
-          ? ['Dankeschön', 'Deine Nachricht wurde erfolgreich versendet!']
-          : ['Thank you', 'Your message has been successfully sent!'],
-      error:
-        language === 'de'
-          ? ['Tut mir leid', 'Ein Fehler ist aufgetreten']
-          : ['Sorry', 'An error occurred'],
-      fillFields:
-        language === 'de'
-          ? ['Sorry', 'Bitte fülle alle Felder aus']
-          : ['Sorry', 'Please fill out all fields'],
-    };
   }
 
   ngOnInit(): void {}
@@ -64,7 +47,6 @@ export class ContactComponent implements OnInit {
   sendEmail() {
     // const formAction = 'https://formspree.io/f/moqgbpow';
     const formAction = 'https://formspree.io/f/demo';
-
     if (this.contactForm.valid) {
       this.http
         .post(formAction, this.contactForm.value, {
@@ -72,24 +54,36 @@ export class ContactComponent implements OnInit {
         })
         .subscribe({
           next: () => {
-            this.dialogService.openDialog(
-              this.messages.success[0],
-              this.messages.success[1]
-            );
+            if (this.getCurrentLanguage() == 'de') {
+              this.dialogService.openDialog(
+                'Dankeschön',
+                'Deine Nachricht wurde erfolgreich versendet!'
+              );
+            } else {
+              this.dialogService.openDialog(
+                'Thank you',
+                'Your message has been successfully sent!'
+              );
+            }
           },
           error: (error) => {
-            this.dialogService.openDialog(
-              this.messages.error[0],
-              this.messages.error[1]
-            );
+            if (this.getCurrentLanguage() == 'de') {
+              this.dialogService.openDialog(
+                'Tut mir leid',
+                'Ein Fehler ist aufgetreten'
+              );
+            } else {
+              this.dialogService.openDialog('Sorry', 'An error occurred');
+            }
             console.log(error);
           },
         });
     } else {
-      this.dialogService.openDialog(
-        this.messages.fillFields[0],
-        this.messages.fillFields[1]
-      );
+      if (this.getCurrentLanguage() == 'de') {
+        this.dialogService.openDialog('Sorry', 'Bitte fülle alle Felder aus');
+      } else {
+        this.dialogService.openDialog('Sorry', 'Please fill out all fields');
+      }
     }
   }
 

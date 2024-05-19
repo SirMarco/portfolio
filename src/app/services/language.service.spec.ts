@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { NavigateToService } from './navigate-to.service';
+import { LanguageService } from './language.service';
 
-describe('NavigateToService', () => {
-  let service: NavigateToService;
+describe('LanguageService', () => {
+  let service: LanguageService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(NavigateToService);
+    service = TestBed.inject(LanguageService);
   });
 
   it('should be created', () => {

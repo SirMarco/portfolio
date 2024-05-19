@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { MainContentComponent } from './main-content/main-content.component';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import AOS from 'aos';
+import { LanguageService } from './services/language.service';
 
 @Component({
   selector: 'app-root',
@@ -14,11 +15,15 @@ import AOS from 'aos';
 export class AppComponent {
   title = 'Portfolio';
 
-  constructor(public translate: TranslateService) {
+  constructor(
+    public translate: TranslateService,
+    public setDefaultLanguage: LanguageService
+  ) {
     // translate.addLangs(['en', 'de']);
     // translate.setDefaultLang('en');
 
-    translate.use('de');
+    translate.use('en');
+    this.setDefaultLanguage.setCurrentLanguage('en');
   }
   ngOnInit() {
     AOS.refresh();

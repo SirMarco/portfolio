@@ -35,7 +35,7 @@ export class DropdownMenuComponent {
     });
   }
 
-  switchLanguage(language: string) {
-    this.translate.use(language);
-  }
+  // switchLanguage(language: string) {
+  //   this.translate.use(language);
+  // }
 }
