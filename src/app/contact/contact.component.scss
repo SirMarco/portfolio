@@ -159,6 +159,7 @@ form {
 .wrapperCheckbox {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   cursor: pointer;
   margin-top: 16px;
 }

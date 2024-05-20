@@ -44,14 +44,20 @@ export class ContactComponent implements OnInit {
 
     let language = this.getCurrentLanguage();
     this.messages = {
-      success:
+      success: (name: string) =>
         language === 'de'
-          ? ['Dankeschön', 'Deine Nachricht wurde erfolgreich versendet!']
-          : ['Thank you', 'Your message has been successfully sent!'],
+          ? [
+              `Dankeschön, ${name}!`,
+              'Deine Nachricht wurde erfolgreich versendet!',
+            ]
+          : [`Thank you, ${name}!`, 'Your message has been successfully sent!'],
       error:
         language === 'de'
-          ? ['Tut mir leid', 'Ein Fehler ist aufgetreten']
-          : ['Sorry', 'An error occurred'],
+          ? [
+              'Tut mir leid',
+              'Ein Fehler ist aufgetreten, ich arbeite an einer Lösung',
+            ]
+          : ['Sorry', 'An error has occurred, I am working on a solution'],
       fillFields:
         language === 'de'
           ? ['Sorry', 'Bitte fülle alle Felder aus']
@@ -71,10 +77,12 @@ export class ContactComponent implements OnInit {
         })
         .subscribe({
           next: () => {
+            let name = this.contactForm.get('name')?.value;
             this.dialogService.openDialog(
-              this.messages.success[0],
-              this.messages.success[1]
+              this.messages.success(name)[0],
+              this.messages.success(name)[1]
             );
+            setTimeout(() => this.contactForm.reset(), 500);
           },
           error: (error) => {
             this.dialogService.openDialog(

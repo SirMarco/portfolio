@@ -10,7 +10,7 @@ export class DialogService {
 
   openDialog(title: string, message: string) {
     let dialogRef = this.dialog.open(DialogTemplateComponent, {
-      width: '300px',
+      width: '500px',
       data: { title: title, message: message },
     });
 
