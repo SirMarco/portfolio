@@ -24,6 +24,9 @@
     @media (min-width: 680px) {
       font-size: 80px;
     }
+    @media (min-width: 1130px) {
+      font-size: 128px;
+    }
   }
 }
 
@@ -81,27 +84,34 @@
   > a {
     text-decoration: none;
     writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    font-size: 23px;
     color: $black;
-    padding-bottom: 8px;
+    margin-bottom: 16px;
   }
 }
 
 .scroll-container {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
-.scroll-container img {
+.arrow {
   position: absolute;
   top: -100%;
   width: 40px;
-  height: 200%;
-  animation: scroll 1.7s linear infinite forwards;
+  height: 250%;
+  animation: scroll 2.4s linear infinite forwards;
   // z-index: -1;
 }
 
 .scroll-container div {
   position: relative;
   background-color: $cream;
+  font-size: 23px;
+  padding-bottom: 8px;
 }
 
 @keyframes scroll {
@@ -109,6 +119,6 @@
     transform: translateY(-100%);
   }
   100% {
-    transform: translateY(80%);
+    transform: translateY(220%);
   }
 }

@@ -20,4 +20,17 @@ export class AboutMeComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     clearInterval(this.intervalId);
   }
+
+  navigate(sectionId: string): void {
+    requestAnimationFrame(() => {
+      let section = document.getElementById(sectionId);
+      if (section) {
+        let offsetTop = section.offsetTop - 80;
+        window.scrollTo({
+          top: offsetTop,
+          behavior: 'smooth',
+        });
+      }
+    });
+  }
 }

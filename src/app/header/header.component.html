@@ -1,7 +1,7 @@
 <header>
-  <img src="assets/images/logoInitialBlack.png" alt="">
+  <img src="assets/images/logoInitialBlack.png" (click)="navigate('header')">
   @if (pathName == "/imprint") {
-  <mat-icon fontIcon="arrow_back" (click)="backButton()"></mat-icon>
+  <img src="assets/images/arrow_back.png" (click)="backButton()">
   }@else {
   <div id="navIcon" [ngClass]="{'open': DropdownMenuService.menuOpen}" (click)="toggleMenu()">
     <span></span>

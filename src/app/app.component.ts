@@ -22,8 +22,8 @@ export class AppComponent {
     // translate.addLangs(['en', 'de']);
     // translate.setDefaultLang('en');
 
-    translate.use('en');
-    this.setDefaultLanguage.setCurrentLanguage('en');
+    translate.use('de');
+    this.setDefaultLanguage.setCurrentLanguage('de');
   }
   ngOnInit() {
     AOS.refresh();

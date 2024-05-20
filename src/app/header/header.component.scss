@@ -14,6 +14,12 @@ header {
   margin: 0 auto;
   width: 100%;
   background-color: $cream;
+  > img:nth-child(1) {
+    width: 100px;
+  }
+  > img:nth-child(2) {
+    width: 30px;
+  }
 }
 
 #navIcon {

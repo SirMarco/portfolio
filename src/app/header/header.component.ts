@@ -30,4 +30,16 @@ export class HeaderComponent {
   toggleMenu() {
     this.DropdownMenuService.toggleMenu();
   }
+  navigate(sectionId: string): void {
+    requestAnimationFrame(() => {
+      let section = document.getElementById(sectionId);
+      if (section) {
+        let offsetTop = section.offsetTop - 0;
+        window.scrollTo({
+          top: offsetTop,
+          behavior: 'smooth',
+        });
+      }
+    });
+  }
 }
