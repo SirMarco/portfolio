@@ -40,7 +40,6 @@
   h3 {
     font-size: 48px;
     font-weight: 800;
-    // color: $orange;
     @media (max-width: 500px) {
       font-size: 36px;
     }
@@ -68,8 +67,6 @@
 .projectImage {
   position: relative;
   width: 100%;
-  // max-width: 600px;
-  // max-height: 500px;
   > img {
     width: 100%;
     height: auto;
@@ -79,14 +76,11 @@
   }
   @media (min-width: 550px) {
     width: 550px;
-    // min-height: 600px;
   }
 }
 
 [data-aos="gray-animation"] {
   filter: grayscale(1);
-  // transition-property: filter;
-
   &.aos-animate {
     filter: grayscale(0);
   }
@@ -105,8 +99,6 @@
     position: absolute;
     top: 40%;
     right: -25px;
-    // width: 64px;
-    // height: 64px;
   }
   &:hover {
     opacity: 1;
@@ -131,9 +123,6 @@
 }
 
 .wrapperProject {
-  // display: flex;
-  // flex-direction: column;
-  // gap: 16px;
   > span {
     display: block;
     text-align: end;
@@ -161,8 +150,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  // min-width: 213px;
-  // height: 68px;
   padding: 16px 40px;
   background-color: transparent;
   border-style: unset;
@@ -170,6 +157,8 @@
   font-family: "Overpass", sans-serif;
   font-size: 23px;
   transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  color: $black;
   &:hover {
     padding: 16px 48px;
     font-weight: 700;

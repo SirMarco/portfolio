@@ -8,15 +8,14 @@
       </div>
     </div>
     <div class="wrapperProject" [attr.data-aos]="index % 2 === 0 ? 'fade-left' : 'fade-right'">
-      <!-- <div class="wrapperProject"> -->
       <span class="fontSyne">{{formatProjectsLength(index + 1)}} / {{formatProjectsLength(projects.length)}}</span>
       <div>
         <h3 class="fontSyne">{{project.name}}</h3>
         <h2>{{project.subheader}}</h2>
         <p>{{ 'project.' + project.name.toLowerCase() | translate }}</p>
         <div class="wrapperButton">
-          <button class="button">Github</button>
-          <button class="button">Live Test</button>
+          <a href="{{project.github}}" target="_blank" class="button">Github</a>
+          <a href="{{project.live}}" target="_blank" class="button">Live Test</a>
         </div>
       </div>
     </div>

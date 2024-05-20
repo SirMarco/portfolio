@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ViewportScroller } from '@angular/common';
 @Component({
   selector: 'app-above-the-fold',
   standalone: true,

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener, ViewChild } from '@angular/core';
 import { HeaderComponent } from '../header/header.component';
 import { ContactComponent } from '../contact/contact.component';
 import { AboveTheFoldComponent } from '../above-the-fold/above-the-fold.component';
@@ -31,9 +31,6 @@ import AOS from 'aos';
 export class MainContentComponent {
   constructor(public DropdownMenuService: DropdownMenuService) {}
   ngOnInit() {
-    AOS.init({
-      // startEvent: 'scroll',
-    });
-    // AOS.refresh();
+    AOS.init({});
   }
 }

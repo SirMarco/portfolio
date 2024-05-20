@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { FooterComponent } from '../footer/footer.component';
 import { DropdownMenuService } from './../services/dropdown-menu.service';
-import { ViewportScroller } from '@angular/common';
-import { Router } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -34,8 +32,4 @@ export class DropdownMenuComponent {
       }
     });
   }
-
-  // switchLanguage(language: string) {
-  //   this.translate.use(language);
-  // }
 }

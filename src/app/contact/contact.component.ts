@@ -62,8 +62,7 @@ export class ContactComponent implements OnInit {
   ngOnInit(): void {}
 
   sendEmail() {
-    // const formAction = 'https://formspree.io/f/moqgbpow';
-    const formAction = 'https://formspree.io/f/demo';
+    let formAction = 'https://formspree.io/f/moqgbpow';
 
     if (this.contactForm.valid) {
       this.http

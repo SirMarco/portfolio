@@ -18,7 +18,9 @@
     "emailrequired": "Deine EMail ist erforderlich",
     "message": "Deine Nachricht",
     "messagerequired": "Deine Nachricht ist leer - mindestens 5 Zeichen",
-    "readpolicy": "Ich habe die Datenschutzbestimmungen gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu."
+    "readpolicy1": "Ich habe die   ",
+    "readpolicy2": " Datenschutzbestimmungen ",
+    "readpolicy3": "gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu."
   },
 
   "aboutMenu": "Über mich",

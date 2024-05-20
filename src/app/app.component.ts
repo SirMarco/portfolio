@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener, ViewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { MainContentComponent } from './main-content/main-content.component';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
@@ -13,15 +13,12 @@ import { LanguageService } from './services/language.service';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'Portfolio';
+  title = 'ME Portfolio';
 
   constructor(
     public translate: TranslateService,
     public setDefaultLanguage: LanguageService
   ) {
-    // translate.addLangs(['en', 'de']);
-    // translate.setDefaultLang('en');
-
     translate.use('de');
     this.setDefaultLanguage.setCurrentLanguage('de');
   }

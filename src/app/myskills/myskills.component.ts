@@ -1,4 +1,3 @@
-import { animate } from '@angular/animations';
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
