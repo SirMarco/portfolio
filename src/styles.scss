@@ -161,16 +161,6 @@ body > x {
   overflow-x: hidden;
 }
 
-.border-red {
-  border: 2px solid red;
-}
-.border-green {
-  border: 2px solid green;
-}
-.border-blue {
-  border: 2px solid blue;
-}
-
 h1 {
   font-family: "Syne";
   font-size: 32px;
@@ -195,32 +185,4 @@ h1 {
     opacity: 1;
     color: $orange;
   }
-}
-
-html,
-body {
-  height: 100%;
-}
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-  margin: 0 auto;
-}
-
-html,
-body {
-  height: 100%;
-}
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-}
-
-html,
-body {
-  height: 100%;
-}
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
 }

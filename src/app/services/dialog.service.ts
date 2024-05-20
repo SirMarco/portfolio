@@ -14,8 +14,6 @@ export class DialogService {
       data: { title: title, message: message },
     });
 
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log('Der Dialog wurde geschlossen' + result);
-    });
+    dialogRef.afterClosed().subscribe((result) => {});
   }
 }
