@@ -9,7 +9,7 @@ export class LanguageService {
   constructor() {}
   setCurrentLanguage(language: string) {
     this.currentLanguage = language;
-    console.log('service language ' + this.currentLanguage);
+    localStorage.setItem('language', this.currentLanguage);
   }
 
   getCurrentLanguage() {

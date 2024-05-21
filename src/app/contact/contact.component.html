@@ -7,42 +7,42 @@
     <div class="input-group">
       <input formControlName="name" type="text" id="name">
       <label for="name"
-        [class.inputValid]="contactForm.controls['name'].value.length > 0 && contactForm.controls['name'].touched">{{'contact.name'
+        [class.inputValid]="contactForm.controls['name'].value?.length > 0 && contactForm.controls['name'].touched">{{'contact.name'
         | translate}}</label>
-      <img *ngIf="contactForm.controls['name'].invalid && contactForm.controls['name'].touched"
+      <img *ngIf="contactForm.controls['name']?.invalid && contactForm.controls['name']?.touched"
         src="assets/images/contactError.png" alt="">
-      <img *ngIf="contactForm.controls['name'].valid && contactForm.controls['name'].touched"
+      <img *ngIf="contactForm.controls['name']?.valid && contactForm.controls['name']?.touched"
         src="assets/images/contactDone.png" alt="">
     </div>
-    <p *ngIf="contactForm.controls['name'].invalid && contactForm.controls['name'].touched" class="noticeInput">
+    <p *ngIf="contactForm.controls['name']?.invalid && contactForm.controls['name']?.touched" class="noticeInput">
       {{'contact.namerequired'
       | translate}}</p>
 
     <div class="input-group">
       <input formControlName="email" type="email" id="email">
-      <label for="name"
-        [class.inputValid]="contactForm.controls['email'].value.length > 0 && contactForm.controls['email'].touched">{{'contact.email'
+      <label for="email"
+        [class.inputValid]="contactForm.controls['email'].value?.length > 0 && contactForm.controls['email'].touched">{{'contact.email'
         | translate}}</label>
-      <img *ngIf="contactForm.controls['email'].invalid && contactForm.controls['email'].touched"
+      <img *ngIf="contactForm.controls['email']?.invalid && contactForm.controls['email']?.touched"
         src="assets/images/contactError.png" alt="">
-      <img *ngIf="contactForm.controls['email'].valid && contactForm.controls['email'].touched"
+      <img *ngIf="contactForm.controls['email']?.valid && contactForm.controls['email']?.touched"
         src="assets/images/contactDone.png" alt="">
     </div>
-    <p *ngIf="contactForm.controls['email'].invalid && contactForm.controls['email'].touched" class="noticeInput">
+    <p *ngIf="contactForm.controls['email']?.invalid && contactForm.controls['email']?.touched" class="noticeInput">
       {{'contact.emailrequired'
       | translate}}</p>
 
     <div class="input-group">
       <textarea formControlName="message"></textarea>
-      <label for="name"
-        [class.inputValid]="contactForm.controls['message'].value.length > 0 && contactForm.controls['message'].touched">{{'contact.message'
+      <label for="message"
+        [class.inputValid]="contactForm.controls['message'].value?.length > 0 && contactForm.controls['message'].touched">{{'contact.message'
         | translate}}</label>
-      <img *ngIf="contactForm.controls['message'].invalid && contactForm.controls['message'].touched"
+      <img *ngIf="contactForm.controls['message']?.invalid && contactForm.controls['message']?.touched"
         src="assets/images/contactError.png" alt="">
-      <img *ngIf="contactForm.controls['message'].valid && contactForm.controls['message'].touched"
+      <img *ngIf="contactForm.controls['message']?.valid && contactForm.controls['message']?.touched"
         src="assets/images/contactDone.png" alt="">
     </div>
-    <p *ngIf="contactForm.controls['message'].invalid && contactForm.controls['message'].touched" class="noticeInput">
+    <p *ngIf="contactForm.controls['message']?.invalid && contactForm.controls['message']?.touched" class="noticeInput">
       {{'contact.messagerequired'
       | translate}}</p>
 

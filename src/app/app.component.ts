@@ -19,9 +19,17 @@ export class AppComponent {
     public translate: TranslateService,
     public setDefaultLanguage: LanguageService
   ) {
-    translate.use('de');
-    this.setDefaultLanguage.setCurrentLanguage('de');
+    let storageLanguage = localStorage.getItem('language');
+
+    if (storageLanguage) {
+      translate.use(storageLanguage);
+      this.setDefaultLanguage.setCurrentLanguage(storageLanguage);
+    } else {
+      translate.use('de');
+      this.setDefaultLanguage.setCurrentLanguage('de');
+    }
   }
+
   ngOnInit() {
     AOS.refresh();
   }

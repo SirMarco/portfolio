@@ -18,12 +18,21 @@ export class FooterComponent {
     public languageService: LanguageService
   ) {
     this.translate = translate;
+    this.setLanguageFromStorage();
   }
 
   switchLanguage(language: string) {
     this.translate.use(language);
     this.currentLanguage = language;
     this.languageService.setCurrentLanguage(language);
-    console.log(this.currentLanguage);
+    localStorage.setItem('language', language);
+  }
+
+  setLanguageFromStorage() {
+    let storedLanguage = localStorage.getItem('language');
+    if (storedLanguage) {
+      this.currentLanguage = storedLanguage;
+      this.translate.use(storedLanguage);
+    }
   }
 }
