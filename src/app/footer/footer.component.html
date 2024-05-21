@@ -10,7 +10,7 @@
       <a href="https://www.linkedin.com/" target="_blank">
         <img src="assets/images/linkedinSocial.png" alt="">
       </a>
-      @if(currentLanguage == 'en'){
+      @if(languageService.currentLanguage == 'en'){
       <img src="assets/images/flag_de.svg" alt="" (click)="switchLanguage('de')">
       }@else {
       <img src="assets/images/flag_us.svg" alt="" (click)="switchLanguage('en')">
