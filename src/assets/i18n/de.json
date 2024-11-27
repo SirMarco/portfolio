@@ -4,6 +4,8 @@
   "About Me - Description2": "Wenn Sie denken, dass ich gut zu Ihren Projekten passen würde, kontaktieren Sie mich!",
   "Portfolio - Header": "Probieren Sie meine neuesten Entwicklungsprojekte aus und schauen Sie sich ihren Code an.",
   "project": {
+    "videoflix": "Eine Videostreaming-Plattform im Stil von Netflix. Angular 17 Frontend und Django REST Backend",
+    "dabubble": "Diese App ist ein Slack-Klon. Sie revolutioniert die Teamkommunikation und -zusammenarbeit durch ihre intuitive Benutzeroberfläche, Echtzeit-Nachrichten und eine leistungsstarke Kanalorganisation.",
     "join": "Aufgabenmanager inspiriert vom Kanban-System. Erstelle und organisiere Aufgaben mit Drag-and-Drop-Funktionen, weise Benutzer und Kategorien zu.",
     "el pololoco": "Ein einfaches Jump-and-Run-Spiel, das auf einem objektorientierten Ansatz basiert. Hilf Pepe, Münzen und Giftflaschen zu finden, um gegen das Killerhuhn zu kämpfen.",
     "pokédex": "Basierend auf der PokéAPI, eine einfache Bibliothek, die Informationen über Pokémon bereitstellt und katalogisiert."

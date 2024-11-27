@@ -60,6 +60,31 @@ export class MyskillsComponent {
       img: 'assets/images/icon_material.png',
       animate: false,
     },
+    {
+      name: 'Python',
+      img: 'assets/images/icon_python.png',
+      animate: false,
+    },
+    {
+      name: 'Django',
+      img: 'assets/images/icon_django.png',
+      animate: false,
+    },
+    {
+      name: 'Postgres',
+      img: 'assets/images/icon_postgresql.png',
+      animate: false,
+    },
+    {
+      name: 'Docker',
+      img: 'assets/images/icon_docker.png',
+      animate: false,
+    },
+    {
+      name: 'Linux',
+      img: 'assets/images/icon_linux.png',
+      animate: false,
+    },
   ];
 
   onMouseEnter(index: number) {
